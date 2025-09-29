@@ -1,0 +1,84 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: antiquewhite;
+  color: brown;
+  text-align: center;
+  margin: 0;
+  scroll-behavior: smooth; /* scroll suave ao clicar no link */
+}
+
+
+/* Seções ocupando a tela inteira e centralizadas */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Hero */
+.hero h1 {
+  margin-bottom: 20px;
+}
+
+.hero a {
+  text-decoration: none;
+  color: antiquewhite;
+  background-color: brown;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero a:hover {
+  background-color: rgb(142, 72, 72);
+}
+
+/* Trilha sonora */
+.trilha h3, h2 {
+  margin-bottom: 20px;
+}
+
+.carousel {
+  position: relative;
+  width: 400px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides iframe {
+  min-width: 100%;
+  border-radius: 12px;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+button {
+  background: brown;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+button:hover {
+  background: rgb(142, 72, 72);
+}
