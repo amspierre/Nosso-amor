@@ -1,5 +1,5 @@
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -8,11 +8,8 @@ body {
   color: brown;
   text-align: center;
   margin: 0;
-  scroll-behavior: smooth; /* scroll suave ao clicar no link */
 }
 
-
-/* Seções ocupando a tela inteira e centralizadas */
 section {
   height: 100vh;
   display: flex;
@@ -41,44 +38,58 @@ section {
 }
 
 /* Trilha sonora */
-.trilha h3, h2 {
+.trilha h2 {
   margin-bottom: 20px;
 }
 
-.carousel {
-  position: relative;
-  width: 400px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-
-.slides {
+.carousel-container {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 90vw;
+  overflow: hidden;
 }
 
-.slides iframe {
-  min-width: 100%;
+.carousel {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 300px;
+  flex-shrink: 0;
+  transition: transform 0.3s, scale 0.3s;
+  transform: scale(0.85);
+  opacity: 0.6;
+}
+
+.slide.middle {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide iframe {
+  width: 100%;
+  height: 352px;
   border-radius: 12px;
-}
-
-.buttons {
-  margin-top: 10px;
-}
-
-button {
-  background: brown;
   border: none;
-  padding: 10px 15px;
-  margin: 0 5px;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
 }
-button:hover {
+
+.nav-button {
+  background: brown;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 0 10px;
+  transition: background 0.3s;
+}
+
+.nav-button:hover {
   background: rgb(142, 72, 72);
 }
