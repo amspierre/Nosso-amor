@@ -14,7 +14,6 @@ function renderSlides() {
 
   const total = musicas.length;
 
-  // Pegamos 3 músicas (anterior, atual e próxima)
   const indices = [
     (currentIndex - 1 + total) % total,
     currentIndex,
@@ -24,7 +23,7 @@ function renderSlides() {
   indices.forEach((i, idx) => {
     const slide = document.createElement("div");
     slide.classList.add("slide");
-    if (idx === 1) slide.classList.add("middle"); // música do meio
+    if (idx === 1) slide.classList.add("middle");
 
     const iframe = document.createElement("iframe");
     iframe.src = musicas[i];
@@ -46,5 +45,41 @@ function prev() {
   renderSlides();
 }
 
-// Iniciar ao carregar a página
-window.onload = renderSlides;
+window.onload = () => {
+  renderSlides();
+  setupTouchEvents();
+};
+
+// ================================
+// 💡 TOQUE PARA MÓVEIS (SWIPE)
+// ================================
+
+function setupTouchEvents() {
+  let startX = 0;
+  let endX = 0;
+
+  const threshold = 50; // distância mínima para contar como swipe
+
+  carousel.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  carousel.addEventListener("touchend", (e) => {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        // swipe para a esquerda
+        next();
+      } else {
+        // swipe para a direita
+        prev();
+      }
+    }
+  }
+}
