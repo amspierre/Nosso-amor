@@ -21,28 +21,14 @@
     <div class="trilha-content">
       <h2>Nossa trilha sonora</h2>
 
-      <div class="carousel">
-        <div class="slides" id="slides">
-          <iframe src="https://open.spotify.com/embed/track/2o2xhyri4aJUtgMGkf5P0J" 
-            width="100%" height="352" frameborder="0" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy"></iframe>
-
-          <iframe src="https://open.spotify.com/embed/track/1DLKuppSYytOuxhtI6KBGu" 
-            width="100%" height="352" frameborder="0" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy"></iframe>
-
-          <iframe src="https://open.spotify.com/embed/track/5IAx5ePf9QztrT7MqdCyDT" 
-            width="100%" height="352" frameborder="0" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy"></iframe>
+      <div class="carousel-container">
+        <button class="nav-button prev" onclick="prev()">&#10094;</button>
+        
+        <div class="carousel" id="carousel">
+          <!-- Slides são gerados dinamicamente no JS -->
         </div>
-      </div>
 
-      <div class="buttons">
-        <button onclick="prev()">Anterior</button>
-        <button onclick="next()">Próxima</button>
+        <button class="nav-button next" onclick="next()">&#10095;</button>
       </div>
     </div>
   </section>
